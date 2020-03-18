@@ -16,6 +16,7 @@ from ys_service.http_service.log_service import LogCreate
 from ys_service.http_service.context_attach_data_server import ContextAttachDataServer
 from ys_service.http_service.attach_data_service import CreateAttachDataService
 from ys_service.log_service.local_log import info_log, error_log
+from ys_service.log_service.send_log_to_log_center import send_to_log_center
 
 
 class Context(object):
@@ -155,4 +156,7 @@ class Context(object):
             self.log(arg_1, level, application_name=application_name,
                      process_stage=process_stage, **kwargs)
 
+    @staticmethod
+    def send_to_log_center(context, project, module, user, return_msg, level, *args):
+        return send_to_log_center(context, project, module, user, return_msg, level, *args)
 

@@ -38,11 +38,11 @@ requirement = [
 
 setuptools.setup(
     name="py_host",
-    version="0.0.1",
+    version="0.0.2",
     author="wiken",
     author_email="wiken01@qq.com",
     description="python host",
-    url="",
+    url="https://github.com/wikensmith/py-host.git",
     long_description=detail_description,
     long_description_content_type="text/markdown",
     install_requires=requirement,
