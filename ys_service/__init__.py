@@ -13,7 +13,7 @@ from ys_service.queue_service.context import Context
 from ys_service.host import Host
 
 # 保存日志至日志中心地址
-SAVE_TO_LOG_CENTER_URL = "192.168.0.212:8081/log/save"
+
 
 ys_host = Host("ys", "ysmq", "192.168.0.100", thread_num=10, log_level=None)
 

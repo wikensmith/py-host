@@ -157,6 +157,7 @@ class Context(object):
                      process_stage=process_stage, **kwargs)
 
     @staticmethod
-    def send_to_log_center(context, project, module, user, return_msg, level, *args):
-        return send_to_log_center(context, project, module, user, return_msg, level, *args)
+    def send_log_to_center(context, project, module, level, user, return_msg, **kwargs):
+        print(kwargs)
+        return send_to_log_center(context, project, module, level, user, return_msg, **kwargs)
 
