@@ -20,7 +20,7 @@ class TimingService(object):
     def __init__(self):
 
         self.func_list = []
-        self.scheduler = BackgroundScheduler()
+        self.scheduler = BackgroundScheduler(timezone="Asia/Shanghai")
 
     def timing_server(self, trigger, **kwargs):
         """

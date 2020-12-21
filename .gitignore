@@ -1,11 +1,1 @@
-test*
-*__pycache__
-.idea
-dist
-job.py
-job
-ys_module.egg-info
-build
-ys_service.egg-info/
-venv/*
-demo/*
+venv

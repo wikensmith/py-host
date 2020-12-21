@@ -10,7 +10,7 @@
 # @Desc    :
 import setuptools
 
-with open("README.md", "r") as f:
+with open("README.md", "r", encoding="utf-8") as f:
     detail_description = f.read()
 
 requirement = [
@@ -38,10 +38,10 @@ requirement = [
 
 setuptools.setup(
     name="py_host",
-    version="0.0.4",
+    version="0.0.8",
     author="wiken",
     author_email="wiken01@qq.com",
-    description="py-host",
+    description="modify format of msg to log center of ys.",
     url="https://github.com/wikensmith/py-host.git",
     long_description=detail_description,
     long_description_content_type="text/markdown",

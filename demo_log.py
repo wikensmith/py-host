@@ -7,28 +7,28 @@
 # @File    : demo_log.py
 # @Software: PyCharm
 # @Desc    :
-import json
-import traceback
-from datetime import datetime
 from ys_service import *
 
 
-@ys_host.register("YS.机票.国内.退票.wiken.DEBUG", prefetch=1)
+@ys_host.register("YS.机票.国内.退票.wiken.DEBUG", prefetch=1, consumer_tag="wikenlala")
 def refund(context):
-
+    print("bigin:", context.text)
     re = context.send_log_to_center(
         context=context,
-        project="51bookRefund",
-        module="domestic",
+        project="wikenTest",
+        module="test1",
         user="7921",
-        level="info",
-        return_msg="result_msg",
-        field1="ss",
+        level="error",
+        return_msg="log_center_test",
+        field1="111111",
         field2="自愿",
         field3="国内",
     )
+
     print("result:", re)
-    pass
+    # context.ack()
+    context.nack()
+
 
 with ys_host:
     ys_host.start()

@@ -61,7 +61,7 @@ class Host(object):
         # 数据库等service提供者
         self.service = ServiceProvider()
 
-    def register(self, queue_name, auto_ack=False, prefetch=3, config_key=None):
+    def register(self, queue_name, auto_ack=False, prefetch=3, **config_map):
         """
         注册队列名字
         :param queue_name: 队列名
@@ -71,7 +71,7 @@ class Host(object):
         :return:
         """
         def _inner(f):
-            return self.queue_server.register(queue_name, auto_ack, prefetch, self.service)(f)
+            return self.queue_server.register(queue_name, auto_ack, prefetch, self.service, **config_map)(f)
         return _inner
 
     def timing(self, trigger, **kwargs):
@@ -106,7 +106,7 @@ class Host(object):
 
     def start_only_timing(self):
         if not self.queue_map:
-            self.time_server.scheduler = BlockingScheduler()
+            self.time_server.scheduler = BlockingScheduler(timezone="Asia/Shanghai")
         TimingService.start(self.time_server)
         # BlockService.start(self.queue_server)
 
