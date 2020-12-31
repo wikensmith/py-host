@@ -44,7 +44,6 @@ class MsgTopicCustomer(object):
         thread = threading.Thread(target=self.do_data, args=(ch, method, props, data, header_frame))
         thread.start()
 
-
     def on_request(self, ch, method, props, body):
         """
         消息处理函数(被basic_consume方法回调)
@@ -54,8 +53,8 @@ class MsgTopicCustomer(object):
         :param body:basic_consume方法回调的参数→body(二进制的消息内容)
         :return:None
         """
-        header = props.headers()
-        print(header)
+        header_frame = props.headers()
+        print(header_frame)
 
         data = body.decode()
         self.multi_threading_do_data(ch, method, props, data, header_frame)
