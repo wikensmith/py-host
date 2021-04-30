@@ -32,7 +32,7 @@ requirement = [
     "six==1.13.0",
     "suds-py3==1.3.4.0",
     "tzlocal==2.0.0",
-    "urllib3==1.25.7",
+    "urllib3==1.25.8",
 ]
 
 
